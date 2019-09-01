@@ -20,12 +20,15 @@ class iOSAssessmentTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    /// This function mocks the network call
+    /// Network call should succeed which should result in test case success
+    
     func testNetworkCall() {
         let ex = expectation(description: "Expecting a JSON data not nil")
         
         NYAPIUtility.apiRequest(requestType: .mostPopuplarNews, apiData: [:], progessViewTitle: "",paramsForUrl: "7", queryParams: [:] ) { (success, response, statusCode) in
             if success {
-                if let jsonResult = response  as? [String: Any] {
+                if let jsonResult = response {
                     
                     if let results = jsonResult["results"] as? [jsonDict] {
                         XCTAssertNotNil(results)
@@ -43,12 +46,16 @@ class iOSAssessmentTests: XCTestCase {
         }
     }
     
+    
+    
+    /// This function checks for the incorrect parameter sent
+    /// Network call should fail which should result in test case failure: As we are only checking for positive results, however this network call returns error (As we are passing *nil* in paramsForUrl which is "Period"
     func testNetworkCallForIncorrectParams() {
         let ex = expectation(description: "Expecting a JSON data not nil")
         
         NYAPIUtility.apiRequest(requestType: .mostPopuplarNews, apiData: [:], progessViewTitle: "",paramsForUrl: nil, queryParams: [:] ) { (success, response, statusCode) in
             if success {
-                if let jsonResult = response  as? [String: Any] {
+                if let jsonResult = response {
                     
                     if let results = jsonResult["results"] as? [jsonDict], results.count > 0 {
                         XCTAssertNotNil(results)

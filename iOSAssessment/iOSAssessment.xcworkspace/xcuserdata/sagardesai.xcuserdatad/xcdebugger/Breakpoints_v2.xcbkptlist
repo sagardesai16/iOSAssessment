@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSAssessmentTests/iOSAssessmentTests.swift"
-            timestampString = "589005536.685119"
+            timestampString = "589044716.229256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "testNetworkCallForIncorrectParams()"
             landmarkType = "7">
          </BreakpointContent>

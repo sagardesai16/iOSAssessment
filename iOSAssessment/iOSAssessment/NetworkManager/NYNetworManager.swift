@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import MBProgressHUD
-import SwiftyJSON
 
 typealias jsonDict = [String:Any]
 

@@ -22,6 +22,14 @@ Following are the two main features for this application:
 - Display list of articles by NY Times
 - Details of article
 
+## Project Structure
+- 📁 StoryBoard : StoaryBoards used for the project. Currently we have only one ie. Main.storyBoard
+- 📁 ViewControllers    : All UIViewControllers of the project
+- 📁 Views : Custom views 
+- 📁 Extensions    : All extensions
+- 📁 Utility    : General content
+- 📁 NetworkManager    : All classes related to Network layer (URLSessions)
+
 ##### Dependencies
 Make sure you have CocoaPods installed and then run:
 pod install
@@ -32,6 +40,9 @@ Third party framewoks and Library are managed using Cocoapods.
 - pod 'Alamofire'
 
 ### Contribution guidelines ###
-* Writing tests
-* Code review
-* Other guidelines
+* Unit Tests
+    - iOSAssessmentTests
+    **testNetworkCall** : For Positive use case which fetches results
+    **testNetworkCallForIncorrectParams**: Negative usecase, where incorrect info is pass - which should lead to test failure
+    
+
