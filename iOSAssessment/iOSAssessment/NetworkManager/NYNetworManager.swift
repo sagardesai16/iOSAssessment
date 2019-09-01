@@ -161,11 +161,9 @@ class NYAPIUtility: NSObject {
                 // Hide progress hud
                 progressHUD?.hide(animated: true)
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                
+            
                 switch(response.result) {
                 case .success(let data):
-                    
-
                     if let jsonResult = data  as? [String: Any] {
                         
                         if let status = jsonResult["status"] as? String, status == "OK" {
@@ -174,19 +172,14 @@ class NYAPIUtility: NSObject {
                             }
                         } else {
                                 completion(false, jsonResult, (response.response?.statusCode)!)
-                            
                         }
-                        
-                        
                     }
                 
                     break
-                    
                 case .failure(let errorData):
                     completion(false, errorData as? jsonDict, response.response?.statusCode ?? -1)
                     
                     break
-                    
                 }
             })
         

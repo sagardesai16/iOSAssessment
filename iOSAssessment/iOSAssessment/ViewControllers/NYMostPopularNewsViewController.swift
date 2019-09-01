@@ -18,7 +18,7 @@ class NYMostPopularNewsViewController: UIViewController {
         
         self.title = "NY Times Most Popular"
         
-        NYAPIUtility.apiRequest(requestType: .mostPopuplarNews, apiData: [:], progessViewTitle: "Fetching..",paramsForUrl: nil, queryParams: [:] ) { (success, response, statusCode) in
+        NYAPIUtility.apiRequest(requestType: .mostPopuplarNews, apiData: [:], progessViewTitle: "Fetching..",paramsForUrl: "7", queryParams: [:] ) { (success, response, statusCode) in
             if success {
                 if let results = response?["results"] as? [jsonDict], results.count > 0 {
                     self.news = results
