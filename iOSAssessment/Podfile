@@ -1,0 +1,21 @@
+platform :ios, '10.0'
+
+target 'iOSAssessment' do
+  use_frameworks!
+
+  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SDWebImage', '~> 5.0'
+  
+  target 'iOSAssessmentTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'iOSAssessmentUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
