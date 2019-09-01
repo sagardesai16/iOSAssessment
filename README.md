@@ -36,8 +36,9 @@ pod install
 
 ##### Pods used
 Third party framewoks and Library are managed using Cocoapods.
-- pod 'SwiftyJSON'
-- pod 'Alamofire'
+- pod 'Alamofire', '~> 5.0.0-beta.5'
+- pod 'MBProgressHUD', '~> 1.1.0'
+- pod 'SDWebImage', '~> 5.0'
 
 ### Contribution guidelines ###
 * Unit Tests
